@@ -3,7 +3,7 @@ html {
   font-size: 100%;
 }
 body {
-  font-family: "メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  font-family: 'Noto Serif JP', serif;
   line-height: 1.7;
 }
 a {
