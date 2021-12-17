@@ -3,7 +3,7 @@ html {
   font-size: 100%;
 }
 body {
-  font-family: "メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  font-family: 'Noto Serif JP', serif;
   line-height: 1.7;
 }
 a {
@@ -11,48 +11,122 @@ a {
 }
 img {
   max-width: 100%;
+  vertical-align: bottom;
+  object-fit: cover;
+}
+.sp-br {
+  display: none;
+}
+#loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 9000;
+}
+#animation{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  text-align: center;
+}
+#animation img{
+  width: 170px;
+  height: 150px;
 }
 header {
-  height: 80px;
-  width: 100%;
-  background-color: #fff;
+position: absolute;
+height: 80px;
+width: 100%;
+background-color: transparent;
+z-index: 2;
 }
 .header-logo {
-  display: flex;
+display: flex;
+padding: 30px 0 70px;
 }
-.logo {
-  width: 85px;
+.header-contact {
+position: absolute;
+padding: 27.5px 10px;
+text-align: center;
+background: #fff;
+text-align: left;
+top: 0;
+right: 0;
 }
-.logo2 {
-  width: 230px;
-  margin-top: 20px;
-}
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 3vw;
-  align-items: center;
-}
-.header-right {
-  text-align: center;
-  line-height: 30px;
-  padding-bottom: 10px;
-  color: #000;
-  font-weight: bold;
+.header-mail {
+padding-bottom: 50px;
+writing-mode: vertical-rl;
+text-orientation: upright;
+line-height: 22px;
+display: flex;
 }
 .header-tel {
-  font-size: 40px;
+writing-mode: vertical-rl;
+text-orientation: upright;
+line-height: 22px;
+display: flex;
+}
+.logo {
+width: 77px;
+}
+.gold-ball {
+width: 50px;
+padding-top: 50px;
+}
+.header-mail p:after {
+position: absolute;
+border-bottom: 1.5px solid #0c0c0c;
+top: 165px;
+right: 9%;
+content: "";
+width: 3.5rem; /* 線の長さ */
+transform: rotate(90deg);
+z-index: 1;
+}
+.header-tel p:after {
+position: absolute;
+border-bottom: 1.5px solid #0c0c0c;
+top: 415px;
+right: 9%;
+content: "";
+width: 3.5rem; /* 線の長さ */
+transform: rotate(90deg);
+z-index: 1;
+}
+.tel-link:hover {
+opacity: 0.5;
+transition: 0.5s;
+}
+.right-logo {
+width: 90px;
+padding: 15px 15px 0 15px;
+}
+.header-inner {
+display: flex;
+justify-content: space-between;
+padding: 0 3vw;
+align-items: center;
 }
 .burger-btn, .nav-wrapper  {
   display: none;
 }
-.dropdwn{
-  width: 100%;
+.dropdwn {
+  background: #0c0c0c;
+}
+.dropdwn-inner{
   display: flex;
   font-size: 18px;
   font-weight: bold;
-  background: linear-gradient(#1e8b27,#1c6823,#17441c);
+  background: #0c0c0c;
   color: #fff;
+  width: 80%;
+  margin: 0 auto;
 }
 ul{
   text-align: center;
@@ -60,49 +134,89 @@ ul{
   margin: 0 auto;
   padding: 0;
 }
-.drop-btn {
-  padding: 30px 50px;
+.dropdwn-icon {
+  width: 68px;
+  height: 68px;
+}
+.dropdwn-icon_sec {
+  width: 60px;
 }
 .dropdwn li{
   position: relative;
-  padding: 10px 0;
+  margin: 10px 0;
   cursor: pointer;
   width: 20%;
   display: inline;
   z-index: 5;
   font-weight: bold;
 }
+.item-center {
+  display: grid;
+  place-items: center;
+}
+.border-right {
+  width: 1px;
+  height: 60px;
+  margin-top: 30px;
+  border: 0.1px solid #fff;
+  z-index: 5;
+}
 .dropdwn li:hover, .dropdwn a:hover {
   color:rgb(255, 194, 41);
-}
-.dropdwn_menu{
-  width: 100%;
-  display: none;
-  position: absolute;
-  margin-left: -5px;
-  margin-top: 10px;
-  padding: 0;
-  background: linear-gradient(#1e8b27,#1c6823,#17441c);
-  line-height: 50px;
-}
-.dropdwn_menu li a{
-  display: block;
-  color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.432);
-}
-.dropdwn_menu li a:hover{
-  background: rgb(255, 194, 41);
-  color: #fff;
 }
 .dropdwn a {
   color: #fff;
   font-weight: bold;
 }
-.main-wrapper {
-  position: relative;
+.fv {
+  height: 100%;
+}
+.fv img{
+  top: 0;
+  object-fit: cover;
+  width: 100vw;
+  height: 500px;
+}
+.fv-cloud {
+  position: absolute;
+  top: 0;
   width: 100%;
-  height: 450px;
-  margin: 3.5% 0;
+  height: 500px;
+}
+.catalog-title {
+  position: absolute;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0c0c0c;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.item-center {
+  display: grid;
+  place-items: center;
+}
+.fv-title {
+  font-size: 1.77rem;
+  text-transform: uppercase;
+}
+.btn-sec, .catalog-btn {
+  padding: 15px 60px;
+  color: white;
+  display: inline-block;
+  border-radius: 4px;
+  text-decoration: underline;
+}
+.detail-btn {
+  background-color: rgb(34, 34, 34);
+  border-radius: 50px;
+  font-size: 1em;
+}
+.detail-btn:hover {
+  opacity: 0.5;
+}
+.main-wrapper {
+  width: 100%;
+  position: relative;
 }
 .img-wrapper {
   position: absolute;
@@ -113,22 +227,22 @@ ul{
   opacity: 0.35;
   max-height: 350px;
 }
-.left-text {
-  font-size: 30px;
-  position: absolute;
-  top: 53%;
-  left: 20%;
-  z-index: 1;
-}
 .right-text {
   position: absolute;
-  font-size: 15px;
-  top: 20%;
-  left: 49%;
-  max-width: 350px;
-  background-color: #def1deb7;
-  line-height: 28px;
+  line-height: 40px;
   padding: 20px;
+  text-align: center;
+  top: 35%;
+  left: 27%;
+}
+.pets-text {
+  position: absolute;
+  max-width: 55%;
+  line-height: 40px;
+  padding: 20px;
+  text-align: center;
+  top: 35%;
+  left: 17%;
 }
 .gallery {
   max-width: 900px;
@@ -146,12 +260,46 @@ ul{
 .pets-grid img, .grid img {
   padding: 15px;
 }
-footer {
+.sun-rise {
+  width: 30%;
+  margin: 0 auto;
+  padding-top: 50px;
+  
+}
+.sunrise-wrapper {
   width: 100%;
-  background-color: #035000;
-  color: #fff;
+  margin: 0 auto;
   text-align: center;
-  padding: 15px;
+}
+/* footer */
+footer {
+  background-color: #E6E5E5;
+  color: #707070;
+  text-align: center;
+  padding: 3% 0 5%;
+}
+.footer-wrapper {
+  display: flex;
+}
+.footer-logo {
+  width: 8em;
+  padding-top: 30px;
+}
+.footer-img {
+  width: 40%;
+}
+.footer-detail {
+  width: 30%;
+  text-align: left;
+  padding-top: 30px;
+}
+.footer-ul {
+  width: 30%;
+  line-height: 35px;
+  margin: 0;
+}
+.footer-ul a {
+  color: #707070;
 }
 #page-top {
   position: fixed;
@@ -168,19 +316,61 @@ footer {
   border: 1px solid rgb(0, 124, 59);
   border-radius: 50%;
 }
-@media screen and (max-width: 768px){
-  header {
-    width: unset;
-    height: 65px;
+@media screen and (min-width: 1600px) {
+  .dropdwn p {
+    font-size: 1.3rem;
   }
+  .right-text p, .pets-text p {
+    font-size: 1.2rem;
+    line-height: 50px;
+  }
+  .gallery {
+    max-width: 1200px;
+  }
+  .grid {
+    grid-template-columns: 300px 300px 300px 300px;
+  }
+/* pets */
+  .pets-grid {
+    grid-template-columns: 650px 650px;
+  }
+}
+@media screen and (max-width: 1060px) {
+  .dropdwn-inner {
+    width: 100%;
+  }
+  .dropdwn-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .border-right {
+    margin-top: 18px;
+  }
+  .right-text {
+    top: 22%;
+    left: 20%;
+  }
+  .pets-text {
+    top: 22%;
+    left: 10%;
+    max-width: 70%;
+  }
+  .gallery {
+    margin-top: 10%;
+  }
+  .pets-grid {
+    grid-template-columns: 300px 300px;
+  }
+  .footer-logo {
+    width: 6em;
+  }
+}
+@media screen and (max-width: 768px){
   .logo {
     width: 68px;
   }
   .logo2 {
     width: 180px;
-  }
-  .header-tel {
-    font-size: 25px;
   }
   .drop-btn {
     padding: 0;
@@ -192,8 +382,8 @@ footer {
     font-size: 13px;
   }
   .main-wrapper {
-    height: 350px;
     width: unset;
+    padding-bottom: 20px;
   }
   .img-wrapper img {
     width: 320px;
@@ -203,14 +393,15 @@ footer {
     top: 55%;
     left: 16%;
   }
-  .right-text {
-    font-size: 10px;
-    max-width: 290px;
+  .right-text, .pets-text {
+    font-size: 0.8rem;
+    line-height: 30px;
     padding: 15px;
-    top: 22%;
   }
-  .right-text p {
-    line-height: 20px;
+  .pets-text {
+    top: 22%;
+    left: 10%;
+    max-width: 70%;
   }
   .gallery {
     max-width: 600px;
@@ -220,7 +411,8 @@ footer {
     grid-template-columns: 200px 200px 200px;
   }
   .pets-grid {
-    grid-template-columns: 300px 300px;
+    margin-top: 20%;
+    grid-template-columns: 1fr 1fr;
   }
   .grid img {
     padding: 10px;
@@ -236,9 +428,67 @@ footer {
     height: 48px !important;
   }
 }
+@media screen and (max-width: 600px) {
+  .dropdwn-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .dropdwn-inner p {
+    font-size: 0.8rem;
+  }
+  .border-right {
+    border: 0;
+  }
+  .right-text, .pets-text {
+    position: unset;
+    margin: 0 auto;
+  }
+  .pets-text {
+    max-width: unset;
+  }
+  .sp-br {
+    display: block;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pets-grid {
+    margin-top: unset;
+  }
+  .sun-rise {
+    width: 50%;
+  }
+  footer {
+    padding: 10% 0;
+  }
+  .footer-logo {
+    width: 3em;
+    margin-left: 20px;
+    padding-top: 0;
+  }
+  .footer-ul, .footer-detail p {
+    font-size: 0.7rem;
+    line-height: 22px;
+    padding: 0;
+  }
+  .footer-ul, .footer-detail {
+    width: 60%;
+    padding: 0;
+  }
+  .footer-detail {
+    padding-right: 20px;
+    line-height: 10px;
+  }
+  .footer-detail small {
+    font-size: 60%;
+  }
+}
 @media screen and (max-width: 375px){
   header {
     height: 48px;
+  }
+  .fv-cloud {
+    display: none;
   }
   .header-right {
     display: none;
@@ -249,11 +499,24 @@ footer {
   .logo2 {
     width: 100px;
   }
-  .dropdwn {
-    display: none;
+  .dropdwn, .dropdwn-inner {
+    height: 70px;
   }
-  .slider img {
-    height: 600px;
+  .dropdwn li {
+    margin: 10px 0 0;
+  }
+  .dropdwn-icon {
+    width: 33px;
+    height: 33px;
+  }
+  .dropdwn-inner p {
+    font-size: 10px;
+  }
+  .intro-cloud {
+    width: 600px;
+  }
+  .main-title h1 {
+    padding: 0;
   }
   .burger-btn {
     display: block;
@@ -334,35 +597,24 @@ footer {
   .nav-item a:hover {
     color: rgb(255, 194, 41);
   }
-  .img-wrapper {
-    left: 13%;
+  .main-title h1 {
+    font-size: 25px;
   }
-  .img-wrapper img {
-    width: 240px;
+  .main-title p {
+    padding-top: 10px;
+    font-size: 0.8rem;
+    line-height: 30px;
   }
-  .right-text {
-    max-width: 200px;
-    top: 31%;
-    left: 35%;
+  small {
+    font-size: 50%;
   }
-  .right-text br {
-    display: none;
+  .mgn-10 {
+    margin: 0 10px 10px 10px;
   }
-  .left-text {
-    font-size: 13px;
-    top: 25%;
-    left: 8%;
+  .pdn-10 {
+    margin: 10px 10px 0 10px;
   }
-  .gallery {
-    max-width: 300px;
-  }
-  .grid {
-    grid-template-columns: 150px 150px;
-  }
-  .pets-grid {
-    grid-template-columns: 150px 150px;
-  }
-  .grid img {
-    padding: 5px;
+  .zyodo-btm, .takanoyama-btm {
+    padding: 0 10px 10px 10px;
   }
 }
