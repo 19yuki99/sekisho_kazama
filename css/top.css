@@ -277,7 +277,7 @@ ul{
   padding: 10% 0 0;
   text-align: center;
   position: relative;
-  background: url(../img/top-img/service_bg.png);
+  background: url(top-img/service_bg.png);
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -453,7 +453,7 @@ ul{
 }
 .top_catalog:after {
   content: "";
-  background: url(../img/top-img/2640663-min.jpg);
+  background: url(top-img/2640663-min.jpg);
   background-size: contain;
   background-repeat: repeat;
   background-position: top;
