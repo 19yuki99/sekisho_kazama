@@ -472,12 +472,12 @@ ul{
   background: transparent;
 }
 .swiper-button-next, .swiper-container-rtl {
-  background-image: url(file:///Users/shinmurayuuki/Downloads/%E7%9F%A2%E5%8D%B0%E3%83%9B%E3%82%99%E3%82%BF%E3%83%B3%E3%80%80%E5%8F%B33.svg) !important;
+  background-image: url(../top-img/right-arrow.svg) !important;
   right: 10px;
   left: auto;
 }
 .swiper-button-prev, .swiper-container-rtl {
-  background-image: url(file:///Users/shinmurayuuki/Downloads/%E7%9F%A2%E5%8D%B0%E3%83%9B%E3%82%99%E3%82%BF%E3%83%B3%E3%80%80%E5%B7%A63.svg) !important;
+  background-image: url(../top-img/left-arrow.svg) !important;
 }
 .swiper-button-next, .swiper-button-prev {
   position: absolute;
