@@ -7,15 +7,6 @@ $('.slider').slick({
   cssEase: 'linear'
 });
 
-//dropdown
-$(function(){
-  $('.dropdwn li').hover(function(){
-      $("ul:not(:animated)", this).slideDown();
-  }, function(){
-      $("ul.dropdwn_menu",this).slideUp();
-  });
-});
-
 //swiper
 var mySwiper = new Swiper('.swiper-container', {
 	spaceBetween: 10,
@@ -29,7 +20,53 @@ var mySwiper = new Swiper('.swiper-container', {
 		type: 'bullets',
 		clickable: true,
 	},
+  breakpoints: {
+    1200: {
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+    },
+    960: {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+    },
+    500: {
+      slidesPerView: 1.2,
+      spaceBetween: 10
+    }
+  }
 });
+
+$window.addEventListener('load',()=>{
+    if( breakPoint < window.innerWidth){
+      mySwiperBool = false;
+    }else{
+      createSwiper();
+      mySwiperBool = true;
+    }
+    resizeSwiper();
+},false);
+const resizeSwiper = () =>{
+  window.addEventListener('resize',()=>{
+    if( breakPoint < window.innerWidth && mySwiperBool){
+      mySwiper.destroy(false,true);
+      mySwiperBool = false;
+    }else if( breakPoint >= window.innerWidth && !(mySwiperBool)){
+      createSwiper();
+      mySwiperBool = true;
+    }
+  },false);
+}
+const createSwiper = () =>{
+  mySwiper = new Swiper('.swiper-container', {
+    speed: 1500,
+    slideToClickedSlide: true,
+    spaceBetween: 10,
+    slidesPerView: 1.5,
+    loop: true,
+    loopedSlides: initSwiperSlidesLength,
+    centeredSlides: true
+  });
+}
 
 //sclolltop
 $(function () {
